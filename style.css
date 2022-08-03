@@ -1,5 +1,187 @@
 /* Resets */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Fonts */
+@font-face {
+  font-family: "Caudex";
+  src: url(/assets/fonts/Caudex-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Caudex Bold";
+  src: url(/assets/fonts/Caudex-Bold.ttf);
+}
+
 /* Variables */
+:root {
+  --primary: #ffffff;
+  --secondary: #131313;
+  --blue: #76ecd0;
+  --green: #ceec76;
+}
+
 /* Base Styles */
+body {
+  background-color: var(--secondary);
+  color: var(--primary);
+
+  font-family: "Caudex";
+  font-style: normal;
+}
+
+img {
+  max-width: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header p {
+  font-weight: 700;
+  font-size: 1.12rem;
+  line-height: 23px;
+}
+
+main .text {
+  display: flex;
+  flex-direction: column;
+}
+
+main .text .sub-text {
+  display: flex;
+}
+
+main .text .sub-text:first-child {
+  justify-content: space-between;
+}
+
+main .text .sub-text:nth-child(2) > * {
+  flex-grow: 1;
+}
+
+main .text .sub-text:last-child {
+  justify-content: space-around;
+}
+
+main .text .sub-text p {
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+main .text .sub-text .bold {
+  font-weight: 700;
+  font-family: "Caudex Bold";
+}
+
 /* Mobile Styles */
+header {
+  padding: 1.5rem 2rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: [col-start] repeat(8, [col-start] 1fr) [col-end];
+  grid-template-rows: auto auto;
+  justify-items: center;
+
+  overflow: hidden;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+main > * {
+  grid-column: col-start / col-end;
+}
+
+main .text {
+  grid-row: 1;
+  justify-self: center;
+  margin-bottom: -2.5rem;
+}
+
+main .text .sub-text {
+  flex-direction: column;
+}
+
+main .text .sub-text p {
+  font-size: 3rem;
+}
+
+main > .image {
+  grid-row: 2;
+}
+
+main .blue-text,
+main .green-text {
+  font-size: 2.25rem;
+  line-height: 46px;
+  text-align: center;
+
+  width: max-content;
+  padding: 0.5rem;
+  grid-row: 2;
+  align-self: center;
+}
+
+main .green-text {
+  transform: rotate(-5deg);
+  color: var(--secondary);
+  background: var(--green);
+  box-shadow: 24px 24px 32px rgba(0, 0, 0, 0.24);
+}
+
+main .blue-text {
+  transform: rotate(5deg);
+  color: var(--secondary);
+  background: var(--blue);
+  z-index: -1;
+}
+
+/* Tablet Styles */
+@media screen and (min-width: 500px) {
+  main .text {
+    justify-self: stretch;
+    padding: 0 4rem;
+  }
+
+  main .text .sub-text {
+    flex-direction: row;
+  }
+
+  main .text .sub-text p {
+    font-size: 4rem;
+  }
+
+  main .text .sub-text p:nth-child(2) {
+    text-align: right;
+  }
+
+  main .text .sub-text:nth-child(2) > * {
+    text-align: right;
+  }
+}
+
+/* Laptop Styles */
+@media screen and (min-width: 900px) {
+  header {
+    padding: 2.5rem 4rem;
+  }
+
+  main {
+    grid-template-columns: [col-start] repeat(12, [col-start] 1fr) [col-end];
+  }
+
+  main .text .sub-text p {
+    font-size: 6rem;
+  }
+}
