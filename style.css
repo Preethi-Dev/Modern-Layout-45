@@ -10,12 +10,12 @@
 /* Fonts */
 @font-face {
   font-family: "Caudex";
-  src: url(/assets/fonts/Caudex-Regular.ttf);
+  src: url("./assets/fonts/Caudex-Regular.ttf");
 }
 
 @font-face {
   font-family: "Caudex Bold";
-  src: url(/assets/fonts/Caudex-Bold.ttf);
+  src: url("./assets/fonts/Caudex-Bold.ttf");
 }
 
 /* Variables */
