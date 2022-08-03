@@ -30,7 +30,9 @@
 body {
   background-color: var(--secondary);
   color: var(--primary);
+}
 
+* {
   font-family: "Caudex";
   font-style: normal;
 }
